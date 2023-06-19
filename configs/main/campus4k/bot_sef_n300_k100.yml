@@ -1,0 +1,21 @@
+# python tools/train.py --config configs/vc_clothes/ti12/vc_clothes.yml -g 0
+
+MODEL: 
+  NAME: "sef"
+  IN_DIM: 2
+  INPUT_CHANNELS: 32
+  CONV_CHANNELS: 32
+  NB_LAYERS: 2
+
+TRAIN:
+  BATCH_SIZE: 16
+  DROPOUT: 0.3
+
+DATA: 
+  DATASET: 'campus4k_imgreid'
+  ROOT: '/data/xieqk/exp/megcn/campus4k-imgreid/bot_insightface_n300'
+  NODES_NUM: 300
+
+DIR_NAME: 'bot_sef_n300_k100'
+LOG_ROOT: './exp/logs/campus4k-imgreid'
+CHECKPOINTS_ROOT: './exp/ckpt/campus4k-imgreid'

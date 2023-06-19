@@ -1,0 +1,22 @@
+# python tools/train.py --config configs/vc_clothes/ti12/vc_clothes.yml -g 0
+
+MODEL: 
+  NAME: "sef_mgn_9"
+  IN_DIM: 9
+  INPUT_CHANNELS: 32
+  CONV_CHANNELS: 32
+  NB_LAYERS: 2
+
+TRAIN:
+  BATCH_SIZE: 16
+  DROPOUT: 0.3
+  LR: 1e-4
+
+DATA: 
+  DATASET: 'dukemtmc_v3_mgn'
+  ROOT: './exp/graph_data/dukemtmc-reid/mgn_n300'
+  NODES_NUM: 300
+
+DIR_NAME: 'dukemtmc_mgn_9'
+LOG_ROOT: './exp/logs/dukemtmc_mgn'
+CHECKPOINTS_ROOT: './exp/ckpt/dukemtmc_mgn'
